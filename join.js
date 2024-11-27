@@ -3,7 +3,6 @@ import { Octokit } from 'https://cdn.skypack.dev/@octokit/core';
 
 const GITHUB_API_OWNER = 'mathlover24';
 const GITHUB_API_REPO = 'my-game';
-const GITHUB_TOKEN = '*******';
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
