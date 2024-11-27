@@ -16,7 +16,7 @@ jobs:
 
       - name: Use GitHub Token
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
           echo "Starting game..."
           echo "GitHub Token is: $GITHUB_TOKEN"
