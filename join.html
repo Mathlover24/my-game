@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Assassin - Join</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Join Senior Assassin</h1>
+
+    <div>
+        <input type="text" id="join-game-code" placeholder="Enter Game Code" />
+        <input type="text" id="player-name" placeholder="Enter Your Name" />
+        <input type="text" id="contact-info" placeholder="Enter Contact Info" />
+        <input type="file" id="profile-picture" accept="image/*" />
+        <button onclick="joinGame()">Join Game</button>
+        <p id="join-status" style="color: red; margin-top: 10px;"></p>
+    </div>
+
+    <script type="module" src="join.js"></script>
+</body>
+</html>
