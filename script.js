@@ -4,7 +4,7 @@ const triggerWorkflow = async () => {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+            Authorization: `Bearer ${process.env.API_TOKEN}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
