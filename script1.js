@@ -1,10 +1,10 @@
 const triggerWorkflow = async () => {
-    const url = 'https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/actions/workflows/main.yml/dispatches';
+    const url = 'https://api.github.com/repos/mathlover24/my-game/actions/workflows/main.yml/dispatches';
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            Authorization: `Bearer ${YOUR_GITHUB_PAT}`,
+            Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
