@@ -1,6 +1,5 @@
 const triggerWorkflow = async () => {
     const url = 'https://api.github.com/repos/mathlover24/my-game/actions/workflows/main.yml/dispatches';
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
     const response = await fetch(url, {
         method: 'POST',
