@@ -1,5 +1,5 @@
 const triggerWorkflow = async () => {
-    const url = 'https://api.github.com/repos/mathlover24/my-game/actions/workflows/<workflow-file-name>.yml/dispatches';
+    const url = 'https://api.github.com/repos/mathlover24/my-game/actions/workflows/main.yml/dispatches';
 
     const response = await fetch(url, {
         method: 'POST',
