@@ -1,19 +1,23 @@
-name: Senior Assassin Workflow
+name: Trigger Workflow Securely
 
 on:
-  workflow_dispatch: # Manually trigger
+  workflow_dispatch: # Allows manual trigger or API dispatch
+    inputs:
+      exampleInput:
+        description: 'An example input'
+        required: false
+        default: 'default-value'
 
 jobs:
-  example_job:
+  trigger_job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Show Environment Variables
+      - name: Use GitHub Token from Secrets
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }} # Inject the secret
+          API_TOKEN: ${{ secrets.API_TOKEN }}  # Access token from GitHub secrets
         run: |
-          echo "This step can use the GitHub Token."
-          node script.js
+          echo "Triggered with input: ${{ github.event.inputs.exampleInput }}"
