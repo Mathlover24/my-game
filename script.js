@@ -1,15 +1,16 @@
 const triggerWorkflow = async () => {
-    const url = 'https://api.github.com/repos/mathlover24/my-game/actions/workflows/main.yml/dispatches';
+    const url = 'https://api.github.com/repos/<your-username>/<your-repo>/actions/workflows/<workflow-file-name>.yml/dispatches';
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            Authorization: `Bearer ${GITHUB_TOKEN}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            ref: 'main', // Branch to trigger
-            inputs: {}   // Pass any workflow inputs if needed
+            ref: 'main', // The branch to trigger
+            inputs: {
+                exampleInput: 'Hello, GitHub Actions!',
+            },
         }),
     });
 
