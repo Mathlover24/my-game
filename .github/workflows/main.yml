@@ -16,7 +16,7 @@ jobs:
 
       - name: Use GitHub Token
         env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}  # Inject GitHub secret as an environment variable
+          API_TOKEN: ${{ secrets.API_TOKEN }}  # Inject GitHub secret as an environment variable
         run: |
           echo "Starting game..."
           echo "GitHub Token is: $API_TOKEN"
