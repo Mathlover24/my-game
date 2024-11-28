@@ -13,7 +13,7 @@ jobs:
 
       - name: Show Environment Variables
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Inject the secret
+          API_TOKEN: ${{ secrets.API_TOKEN }} # Inject the secret
         run: |
           echo "This step can use the GitHub Token."
           node script.js
