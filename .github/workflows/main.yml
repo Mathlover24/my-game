@@ -1,22 +1,19 @@
 name: Senior Assassin Workflow
 
 on:
-  push:
-    branches:
-      - main   # Trigger workflow on push to main branch
-  workflow_dispatch: # Allow manual triggering via GitHub UI
+  workflow_dispatch: # Manually trigger
 
 jobs:
-  create_game:
+  example_job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Use GitHub Token
+      - name: Show Environment Variables
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}  # Inject GitHub secret as an environment variable
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Inject the secret
         run: |
-          echo "Starting game..."
-          echo "GitHub Token is: $API_TOKEN"
+          echo "This step can use the GitHub Token."
+          node script.js
