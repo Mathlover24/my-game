@@ -3,8 +3,8 @@ name: Senior Assassin Workflow
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main   # Trigger workflow on push to main branch
+  workflow_dispatch: # Allow manual triggering via GitHub UI
 
 jobs:
   create_game:
@@ -16,7 +16,7 @@ jobs:
 
       - name: Use GitHub Token
         env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}  # Inject GitHub secret as an environment variable
         run: |
           echo "Starting game..."
           echo "GitHub Token is: $GITHUB_TOKEN"
